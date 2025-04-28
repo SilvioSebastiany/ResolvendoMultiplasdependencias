@@ -1,12 +1,12 @@
 ﻿namespace DependencyInjectionLifetimeSample.Services;
 
 public class TertiaryService : IService
-{
-    private readonly PrimaryService _primaryService;
+{   
+     private readonly PrimaryService _primaryService;
     private readonly SecondaryService _secondaryService;
     private readonly SecondaryService _secondaryServiceNewInstance;
 
-    public TertiaryService(
+     public TertiaryService(
         PrimaryService primaryService,
         SecondaryService secondaryService,
         SecondaryService secondaryServiceNewInstance)
@@ -14,7 +14,7 @@ public class TertiaryService : IService
         _primaryService = primaryService;
         _secondaryService = secondaryService;
         _secondaryServiceNewInstance = secondaryServiceNewInstance;
-    }
+    } 
 
     public Guid Id { get; set; } = Guid.NewGuid();
     public Guid PrimaryServiceId => _primaryService.Id;
